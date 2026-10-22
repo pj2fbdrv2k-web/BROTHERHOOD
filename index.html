@@ -34,8 +34,8 @@
 <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased min-h-screen flex flex-col justify-between transition-colors duration-300">
 
     <!-- Welcome Bulk Discount Popup Modal -->
-    <div id="welcome-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-gray-900 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl border border-gray-100 dark:border-gray-800 relative animate-in fade-in zoom-in duration-300">
+    <div id="welcome-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl border border-gray-100 dark:border-gray-800 relative">
             <div class="w-16 h-16 bg-blue-600/10 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
                 <i class="fa-solid fa-tag"></i>
             </div>
@@ -62,7 +62,6 @@
     <!-- Navigation Header -->
     <header class="sticky top-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo & Name -->
             <a href="#" class="flex items-center space-x-3 group">
                 <div class="w-12 h-12 bg-brand dark:bg-white dark:text-gray-900 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md group-hover:scale-105 transition-transform">
                     TC
@@ -73,9 +72,7 @@
                 </div>
             </a>
 
-            <!-- Actions -->
             <div class="flex items-center space-x-2 sm:space-x-3">
-                <!-- Theme Toggle Button -->
                 <button onclick="toggleDarkMode()" class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-200 transition-colors" title="Toggle Theme">
                     <i id="theme-icon" class="fa-solid fa-moon"></i>
                 </button>
@@ -89,14 +86,12 @@
 
     <!-- Main Hero & Marketplace Content -->
     <main class="flex-grow">
-        <!-- Luxury Hero Banner -->
         <section class="bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 py-12 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-200 dark:border-gray-800">
             <div class="max-w-3xl mx-auto">
                 <span class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block mb-4 shadow-xs">Official Online Storefront</span>
                 <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 text-gray-900 dark:text-white">Upgrade Your Wardrobe with Premium Styles</h1>
                 <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base mb-8 max-w-xl mx-auto">Browse our collection of top-grade polos, tees, shorts, and trousers. Select your location and order directly via WhatsApp for fast waybill dispatch from Onitsha.</p>
                 
-                <!-- Category Filter Buttons -->
                 <div class="flex flex-wrap justify-center gap-2">
                     <button onclick="filterCategory('all')" id="btn-all" class="cat-btn px-4.5 py-2.5 rounded-xl text-sm font-extrabold bg-brand text-white dark:bg-white dark:text-gray-900 shadow transition-all">All Items</button>
                     <button onclick="filterCategory('Polos')" id="btn-Polos" class="cat-btn px-4.5 py-2.5 rounded-xl text-sm font-bold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 transition-all">Polos & Tees</button>
@@ -106,15 +101,14 @@
             </div>
         </section>
 
-        <!-- Live Trust & Statistics Bar -->
         <section class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-6 px-4">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800">
-                    <span class="block text-2xl font-black text-brand-accent" id="stat-visitors">9,420+</span>
+                    <span class="block text-2xl font-black text-brand-accent">9,420+</span>
                     <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Total Store Visitors</span>
                 </div>
                 <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800">
-                    <span class="block text-2xl font-black text-emerald-600" id="stat-sold">1,850+</span>
+                    <span class="block text-2xl font-black text-emerald-600">1,850+</span>
                     <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Items Dispatched</span>
                 </div>
                 <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800">
@@ -128,7 +122,6 @@
             </div>
         </section>
 
-        <!-- Marketplace Grid Section -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
                 <div>
@@ -136,7 +129,6 @@
                     <p class="text-sm text-gray-500 dark:text-gray-400">Select your delivery location and tap order to buy instantly</p>
                 </div>
                 
-                <!-- Delivery Location Selector for Buyer -->
                 <div class="flex items-center space-x-2 bg-white dark:bg-gray-900 p-2 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xs w-full sm:w-auto">
                     <span class="text-xs font-bold text-gray-400 uppercase pl-2">Ship To:</span>
                     <select id="global-delivery-location" class="bg-transparent text-xs font-bold text-gray-800 dark:text-gray-200 focus:outline-none pr-4">
@@ -151,12 +143,8 @@
                 </div>
             </div>
 
-            <!-- Product Grid -->
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Dynamic Products Injected Here -->
-            </div>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
 
-            <!-- Empty State -->
             <div id="empty-state" class="hidden text-center py-20 bg-white dark:bg-gray-900 rounded-3xl border border-dashed border-gray-300 dark:border-gray-800 mt-4">
                 <div class="w-16 h-16 bg-gray-100 dark:bg-gray-800 text-gray-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                     <i class="fa-solid fa-box-open"></i>
@@ -166,7 +154,6 @@
             </div>
         </section>
 
-        <!-- Customer Testimonies & Waybill Proof Section -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200 dark:border-gray-800">
             <div class="text-center max-w-xl mx-auto mb-10">
                 <span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Verified Delivery Proof</span>
@@ -211,8 +198,8 @@
         </section>
     </main>
 
-    <!-- Admin Posting Modal (Protected via #admin URL hash) -->
-    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+    <!-- Admin Posting Modal -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 hidden">
         <div class="bg-white dark:bg-gray-900 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 dark:border-gray-800">
             <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between sticky top-0 bg-white dark:bg-gray-900 z-10">
                 <div class="flex items-center space-x-2">
@@ -265,7 +252,6 @@
                     </div>
                 </div>
 
-                <!-- Dual Photo Uploads (Front & Back Views) -->
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-1">Front View Photo</label>
@@ -288,12 +274,9 @@
                 </div>
             </form>
 
-            <!-- Admin Inventory Manager List -->
             <div class="p-6 border-t border-gray-100 dark:border-gray-800">
                 <h4 class="text-sm font-black mb-3 text-gray-900 dark:text-white">Manage Existing Inventory Status:</h4>
-                <div id="admin-inventory-list" class="space-y-2 max-h-48 overflow-y-auto">
-                    <!-- Dynamic inventory status items -->
-                </div>
+                <div id="admin-inventory-list" class="space-y-2 max-h-48 overflow-y-auto"></div>
             </div>
         </div>
     </div>
@@ -306,7 +289,6 @@
                     <span class="text-xl font-extrabold tracking-tight block">TEKA CLOTHING</span>
                     <p class="text-gray-400 text-xs mt-1">Onitsha, Anambra State, Nigeria • Nationwide Waybill Dispatch</p>
                 </div>
-                <!-- Social Media Links -->
                 <div class="flex items-center space-x-4 text-xl">
                     <a href="https://www.facebook.com/tekaclothing" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors text-white" title="Facebook">
                         <i class="fa-brands fa-facebook-f"></i>
@@ -370,11 +352,11 @@
             }
         ];
 
-        let products = JSON.parse(localStorage.getItem('teka_products_v4')) || defaultProducts;
+        let products = JSON.parse(localStorage.getItem('teka_products_v6')) || defaultProducts;
         let currentFilter = 'all';
 
         function saveProducts() {
-            localStorage.setItem('teka_products_v4', JSON.stringify(products));
+            localStorage.setItem('teka_products_v6', JSON.stringify(products));
         }
 
         function closeWelcomeModal() {
@@ -400,7 +382,6 @@
             document.getElementById('theme-icon').className = "fa-solid fa-sun";
         }
 
-        // Check if admin is triggered via URL hash (#admin)
         function checkAdminHash() {
             if (window.location.hash === '#admin') {
                 const pin = prompt("Enter Admin Passcode:");
@@ -408,7 +389,7 @@
                     openAdminModal();
                 } else {
                     alert("Incorrect passcode.");
-                    window.location.hash = ''; // clear hash
+                    window.location.hash = '';
                 }
             }
         }
@@ -433,9 +414,9 @@
             grid.innerHTML = filtered.map(p => {
                 let badgeHTML = '';
                 if (p.status === 'sold') {
-                    badgeHTML = `<div class="absolute inset-0 bg-black/70 flex items-center justify-center backdrop-blur-xs"><span class="bg-red-600 text-white font-black px-4 py-2 rounded-xl text-lg uppercase tracking-wider rotate-[-10deg] shadow-xl">SOLD OUT</span></div>`;
+                    badgeHTML = `<div class="absolute inset-0 bg-black/70 flex items-center justify-center backdrop-blur-md"><span class="bg-red-600 text-white font-black px-4 py-2 rounded-xl text-lg uppercase tracking-wider rotate-[-10deg] shadow-xl">SOLD OUT</span></div>`;
                 } else if (p.status === 'pending') {
-                    badgeHTML = `<div class="absolute inset-0 bg-amber-900/60 flex items-center justify-center backdrop-blur-xs"><span class="bg-amber-500 text-gray-950 font-black px-4 py-2 rounded-xl text-base uppercase tracking-wider shadow-xl">PENDING / RESERVED</span></div>`;
+                    badgeHTML = `<div class="absolute inset-0 bg-amber-900/60 flex items-center justify-center backdrop-blur-md"><span class="bg-amber-500 text-gray-950 font-black px-4 py-2 rounded-xl text-base uppercase tracking-wider shadow-xl">PENDING / RESERVED</span></div>`;
                 }
 
                 return `
@@ -449,7 +430,6 @@
                             ${badgeHTML}
                         </div>
                         
-                        <!-- Thumbnail Toggle for Front/Back Views -->
                         ${p.imageBack ? `
                         <div class="flex items-center justify-center space-x-2 py-2 bg-gray-50 dark:bg-gray-800/40 border-b border-gray-100 dark:border-gray-800 text-xs font-bold">
                             <button onclick="switchImageView(${p.id}, 'front')" class="px-2 py-0.5 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300">Front View</button>
@@ -462,7 +442,6 @@
                             <div class="text-xl font-black text-blue-600 dark:text-blue-400 mb-3">
                                 ₦${p.price.toLocaleString()}
                             </div>
-                            <!-- Size Selector -->
                             <div class="mb-4">
                                 <span class="block text-xs font-bold text-gray-400 uppercase mb-1.5">Select Size:</span>
                                 <div class="flex flex-wrap gap-1.5" id="sizes-${p.id}">
@@ -554,7 +533,7 @@
 
         function closeAdminModal() {
             document.getElementById('admin-modal').classList.add('hidden');
-            window.location.hash = ''; // clear hash on close
+            window.location.hash = '';
         }
 
         function renderAdminInventoryList() {
