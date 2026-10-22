@@ -211,14 +211,7 @@
         </section>
     </main>
 
-    <!-- Hidden Secure Admin Floating Button & Modal Trigger -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <button onclick="checkAdminAccess()" class="w-12 h-12 rounded-full bg-brand dark:bg-white dark:text-gray-900 text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform" title="Admin Access">
-            <i class="fa-solid fa-lock text-sm"></i>
-        </button>
-    </div>
-
-    <!-- Admin Posting Modal (Protected) -->
+    <!-- Admin Posting Modal (Protected via #admin URL hash) -->
     <div id="admin-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 hidden">
         <div class="bg-white dark:bg-gray-900 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 dark:border-gray-800">
             <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between sticky top-0 bg-white dark:bg-gray-900 z-10">
@@ -377,11 +370,11 @@
             }
         ];
 
-        let products = JSON.parse(localStorage.getItem('teka_products_v3')) || defaultProducts;
+        let products = JSON.parse(localStorage.getItem('teka_products_v4')) || defaultProducts;
         let currentFilter = 'all';
 
         function saveProducts() {
-            localStorage.setItem('teka_products_v3', JSON.stringify(products));
+            localStorage.setItem('teka_products_v4', JSON.stringify(products));
         }
 
         function closeWelcomeModal() {
@@ -406,6 +399,21 @@
             document.documentElement.classList.add('dark');
             document.getElementById('theme-icon').className = "fa-solid fa-sun";
         }
+
+        // Check if admin is triggered via URL hash (#admin)
+        function checkAdminHash() {
+            if (window.location.hash === '#admin') {
+                const pin = prompt("Enter Admin Passcode:");
+                if (pin === "2026" || pin === "1234" || pin === "admin") {
+                    openAdminModal();
+                } else {
+                    alert("Incorrect passcode.");
+                    window.location.hash = ''; // clear hash
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', checkAdminHash);
 
         function renderProducts() {
             const grid = document.getElementById('product-grid');
@@ -539,15 +547,6 @@
             window.open(encodedUrl, '_blank');
         }
 
-        function checkAdminAccess() {
-            const pin = prompt("Enter Admin Passcode to open posting panel:");
-            if (pin === "2026" || pin === "1234" || pin === "admin") {
-                openAdminModal();
-            } else if (pin !== null) {
-                alert("Incorrect passcode.");
-            }
-        }
-
         function openAdminModal() {
             document.getElementById('admin-modal').classList.remove('hidden');
             renderAdminInventoryList();
@@ -555,6 +554,7 @@
 
         function closeAdminModal() {
             document.getElementById('admin-modal').classList.add('hidden');
+            window.location.hash = ''; // clear hash on close
         }
 
         function renderAdminInventoryList() {
@@ -661,6 +661,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts();
+            checkAdminHash();
         });
     </script>
 </body>
