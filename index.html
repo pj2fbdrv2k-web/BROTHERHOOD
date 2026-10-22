@@ -33,7 +33,7 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased min-h-screen flex flex-col justify-between transition-colors duration-300">
 
-    <!-- Welcome Bulk Discount Popup Modal -->
+    <!-- Welcome Bulk Discount Popup Modal (Item #6) -->
     <div id="welcome-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
         <div class="bg-white dark:bg-gray-900 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl border border-gray-100 dark:border-gray-800 relative">
             <div class="w-16 h-16 bg-blue-600/10 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <!-- Top Announcement Bar -->
+    <!-- Top Announcement Bar & Active Viewers (Item #4) -->
     <div class="bg-brand dark:bg-gray-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide border-b border-gray-800 flex items-center justify-center space-x-4">
         <span>Teka Clothing (EST. 2026) | Premium Trousers, Shorts & Polos | Fast Waybill Dispatch from Onitsha</span>
         <div class="hidden md:flex items-center space-x-2 text-emerald-400 font-bold bg-emerald-950/50 px-2.5 py-0.5 rounded-full text-xs">
@@ -59,19 +59,18 @@
         </div>
     </div>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Header with Dark Mode Toggle (Item #7) -->
     <header class="sticky top-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo with Secret 3-Tap Admin Trigger -->
-            <a href="#" onclick="handleLogoTap(event)" class="flex items-center space-x-3 group select-none">
-                <div class="w-12 h-12 bg-brand dark:bg-white dark:text-gray-900 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md group-hover:scale-105 transition-transform">
+            <div class="flex items-center space-x-3 group select-none">
+                <div class="w-12 h-12 bg-brand dark:bg-white dark:text-gray-900 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md">
                     TC
                 </div>
                 <div>
                     <span class="text-xl sm:text-2xl font-black tracking-tight text-gray-900 dark:text-white block leading-none">TEKA CLOTHING</span>
                     <span class="text-xs font-bold text-brand-gold tracking-widest uppercase mt-1 block">EST. 2026 • Onitsha</span>
                 </div>
-            </a>
+            </div>
 
             <div class="flex items-center space-x-2 sm:space-x-3">
                 <button onclick="toggleDarkMode()" class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-200 transition-colors" title="Toggle Theme">
@@ -85,23 +84,17 @@
         </div>
     </header>
 
-    <!-- Main Hero & Marketplace Content -->
+    <!-- Main Marketplace Content -->
     <main class="flex-grow">
         <section class="bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 py-12 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-200 dark:border-gray-800">
             <div class="max-w-3xl mx-auto">
                 <span class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block mb-4 shadow-xs">Official Online Storefront</span>
                 <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 text-gray-900 dark:text-white">Upgrade Your Wardrobe with Premium Styles</h1>
-                <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base mb-8 max-w-xl mx-auto">Browse our collection of top-grade polos, tees, shorts, and trousers. Select your location and order directly via WhatsApp for fast waybill dispatch from Onitsha.</p>
-                
-                <div class="flex flex-wrap justify-center gap-2">
-                    <button onclick="filterCategory('all')" id="btn-all" class="cat-btn px-4.5 py-2.5 rounded-xl text-sm font-extrabold bg-brand text-white dark:bg-white dark:text-gray-900 shadow transition-all">All Items</button>
-                    <button onclick="filterCategory('Polos')" id="btn-Polos" class="cat-btn px-4.5 py-2.5 rounded-xl text-sm font-bold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 transition-all">Polos & Tees</button>
-                    <button onclick="filterCategory('Trousers')" id="btn-Trousers" class="cat-btn px-4.5 py-2.5 rounded-xl text-sm font-bold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 transition-all">Trousers</button>
-                    <button onclick="filterCategory('Shorts')" id="btn-Shorts" class="cat-btn px-4.5 py-2.5 rounded-xl text-sm font-bold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 transition-all">Shorts</button>
-                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base mb-4 max-w-xl mx-auto">Browse our collection of top-grade polos, tees, shorts, and trousers. Select your location and order directly via WhatsApp for fast waybill dispatch from Onitsha.</p>
             </div>
         </section>
 
+        <!-- Live Store Statistics Grid (Item #4) -->
         <section class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-6 px-4">
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800">
@@ -145,16 +138,9 @@
             </div>
 
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
-
-            <div id="empty-state" class="hidden text-center py-20 bg-white dark:bg-gray-900 rounded-3xl border border-dashed border-gray-300 dark:border-gray-800 mt-4">
-                <div class="w-16 h-16 bg-gray-100 dark:bg-gray-800 text-gray-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                    <i class="fa-solid fa-box-open"></i>
-                </div>
-                <h3 class="text-lg font-bold text-gray-800 dark:text-white">No products found in this category</h3>
-                <p class="text-sm text-gray-500 mt-1">Check back soon for new arrivals.</p>
-            </div>
         </section>
 
+        <!-- Verified Delivery Proof Section (Item #5) -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200 dark:border-gray-800">
             <div class="text-center max-w-xl mx-auto mb-10">
                 <span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Verified Delivery Proof</span>
@@ -199,89 +185,6 @@
         </section>
     </main>
 
-    <!-- Admin Posting Modal -->
-    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 hidden">
-        <div class="bg-white dark:bg-gray-900 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 dark:border-gray-800">
-            <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between sticky top-0 bg-white dark:bg-gray-900 z-10">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center font-bold">
-                        <i class="fa-solid fa-gauge-high"></i>
-                    </div>
-                    <h3 class="text-lg font-black text-gray-900 dark:text-white">Teka Clothing Admin Panel</h3>
-                </div>
-                <button onclick="closeAdminModal()" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 flex items-center justify-center transition-colors">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <form id="product-form" onsubmit="handleProductSubmit(event)" class="p-6 space-y-4">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-1">Product Name / Title</label>
-                    <input type="text" id="p-name" required placeholder="e.g., Premium Designer Cotton Polo" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white">
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-1">Category</label>
-                        <select id="p-category" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white">
-                            <option value="Polos">Polos & Tees</option>
-                            <option value="Trousers">Trousers</option>
-                            <option value="Shorts">Shorts</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-1">Price (₦)</label>
-                        <input type="number" id="p-price" required placeholder="15000" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-1">Available Sizes</label>
-                    <div class="grid grid-cols-4 gap-2 mt-1">
-                        <label class="flex items-center justify-center p-2.5 border border-gray-300 dark:border-gray-700 rounded-xl cursor-pointer text-xs font-bold">
-                            <input type="checkbox" name="sizes" value="M" class="mr-1.5 accent-blue-500"> M
-                        </label>
-                        <label class="flex items-center justify-center p-2.5 border border-gray-300 dark:border-gray-700 rounded-xl cursor-pointer text-xs font-bold">
-                            <input type="checkbox" name="sizes" value="L" class="mr-1.5 accent-blue-500" checked> L
-                        </label>
-                        <label class="flex items-center justify-center p-2.5 border border-gray-300 dark:border-gray-700 rounded-xl cursor-pointer text-xs font-bold">
-                            <input type="checkbox" name="sizes" value="XL" class="mr-1.5 accent-blue-500" checked> XL
-                        </label>
-                        <label class="flex items-center justify-center p-2.5 border border-gray-300 dark:border-gray-700 rounded-xl cursor-pointer text-xs font-bold">
-                            <input type="checkbox" name="sizes" value="XXL" class="mr-1.5 accent-blue-500"> XXL
-                        </label>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-1">Front View Photo</label>
-                        <input type="file" id="p-img-front" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-gray-800 dark:file:text-white">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-1">Back View Photo</label>
-                        <input type="file" id="p-img-back" accept="image/*" class="w-full text-xs text-gray-500 file:mr-2 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-gray-800 dark:file:text-white">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-1">Description & Material Details</label>
-                    <textarea id="p-desc" rows="2" placeholder="Pure cotton fabric, comfortable fit..." class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white"></textarea>
-                </div>
-
-                <div class="pt-2 flex items-center justify-end space-x-3">
-                    <button type="button" onclick="closeAdminModal()" class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-5 py-3 rounded-2xl text-sm font-semibold">Cancel</button>
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl text-sm font-bold shadow-md">Publish to Store</button>
-                </div>
-            </form>
-
-            <div class="p-6 border-t border-gray-100 dark:border-gray-800">
-                <h4 class="text-sm font-black mb-3 text-gray-900 dark:text-white">Manage Existing Inventory Status:</h4>
-                <div id="admin-inventory-list" class="space-y-2 max-h-48 overflow-y-auto"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="bg-brand dark:bg-gray-900 text-white mt-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -293,12 +196,6 @@
                 <div class="flex items-center space-x-4 text-xl">
                     <a href="https://www.facebook.com/tekaclothing" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors text-white" title="Facebook">
                         <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="#" onclick="alert('Instagram profile coming up soon!'); return false;" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-pink-600 flex items-center justify-center transition-colors text-white" title="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="#" onclick="alert('TikTok profile coming up soon!'); return false;" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-black flex items-center justify-center transition-colors text-white" title="TikTok">
-                        <i class="fa-brands fa-tiktok"></i>
                     </a>
                     <a href="https://wa.me/2347036924110" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center transition-colors text-white" title="WhatsApp">
                         <i class="fa-brands fa-whatsapp"></i>
@@ -315,19 +212,17 @@
         </div>
     </footer>
 
-    <!-- JavaScript Application Logic -->
+    <!-- Core JavaScript -->
     <script>
-        const defaultProducts = [
+        const sampleProducts = [
             {
                 id: 1,
                 name: "Classic Italian Cotton Polo",
                 category: "Polos",
                 price: 14500,
                 sizes: ["M", "L", "XL", "XXL"],
-                imageFront: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=800",
-                imageBack: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=800",
-                desc: "Premium breathable fabric, tailored fit, ideal for casual and corporate outings.",
-                status: "available"
+                image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=800",
+                desc: "Premium breathable fabric, tailored fit, ideal for casual and corporate outings."
             },
             {
                 id: 2,
@@ -335,10 +230,8 @@
                 category: "Trousers",
                 price: 22000,
                 sizes: ["L", "XL", "XXL"],
-                imageFront: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800",
-                imageBack: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&q=80&w=800",
-                desc: "Smooth finish cotton blend trouser designed for durability and sharp styling.",
-                status: "available"
+                image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800",
+                desc: "Smooth finish cotton blend trouser designed for durability and sharp styling."
             },
             {
                 id: 3,
@@ -346,19 +239,10 @@
                 category: "Shorts",
                 price: 12500,
                 sizes: ["M", "L", "XL"],
-                imageFront: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&q=80&w=800",
-                imageBack: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800",
-                desc: "Multi-pocket rugged cargo shorts built for ultimate comfort and streetwear style.",
-                status: "available"
+                image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&q=80&w=800",
+                desc: "Multi-pocket rugged cargo shorts built for ultimate comfort and streetwear style."
             }
         ];
-
-        let products = JSON.parse(localStorage.getItem('teka_products_v7')) || defaultProducts;
-        let currentFilter = 'all';
-
-        function saveProducts() {
-            localStorage.setItem('teka_products_v7', JSON.stringify(products));
-        }
 
         function closeWelcomeModal() {
             document.getElementById('welcome-modal').classList.add('hidden');
@@ -383,71 +267,20 @@
             document.getElementById('theme-icon').className = "fa-solid fa-sun";
         }
 
-        // Secret 3-Tap Logo Trigger for Admin Panel
-        let logoTapCount = 0;
-        let logoTapTimer = null;
-        function handleLogoTap(e) {
-            e.preventDefault();
-            logoTapCount++;
-            if (logoTapCount === 1) {
-                logoTapTimer = setTimeout(() => {
-                    logoTapCount = 0;
-                }, 1000);
-            } else if (logoTapCount === 3) {
-                clearTimeout(logoTapTimer);
-                logoTapCount = 0;
-                const pin = prompt("Enter Admin Passcode:");
-                if (pin === "2026" || pin === "1234" || pin === "admin") {
-                    openAdminModal();
-                } else if (pin !== null) {
-                    alert("Incorrect passcode.");
-                }
-            }
-        }
-
         function renderProducts() {
             const grid = document.getElementById('product-grid');
-            const emptyState = document.getElementById('empty-state');
-
-            const filtered = currentFilter === 'all' 
-                ? products 
-                : products.filter(p => p.category === currentFilter);
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                return;
-            }
-
-            emptyState.classList.add('hidden');
-            grid.innerHTML = filtered.map(p => {
-                let badgeHTML = '';
-                if (p.status === 'sold') {
-                    badgeHTML = `<div class="absolute inset-0 bg-black/70 flex items-center justify-center backdrop-blur-md"><span class="bg-red-600 text-white font-black px-4 py-2 rounded-xl text-lg uppercase tracking-wider rotate-[-10deg] shadow-xl">SOLD OUT</span></div>`;
-                } else if (p.status === 'pending') {
-                    badgeHTML = `<div class="absolute inset-0 bg-amber-900/60 flex items-center justify-center backdrop-blur-md"><span class="bg-amber-500 text-gray-950 font-black px-4 py-2 rounded-xl text-base uppercase tracking-wider shadow-xl">PENDING / RESERVED</span></div>`;
-                }
-
-                return `
+            grid.innerHTML = sampleProducts.map(p => `
                 <div class="bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-xs hover:shadow-xl transition-all flex flex-col justify-between group">
                     <div>
                         <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
-                            <img src="${p.imageFront}" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" id="img-view-${p.id}" onerror="this.src='https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=800'">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
                             <span class="absolute top-3 left-3 bg-brand dark:bg-white dark:text-gray-900 text-white text-xs font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider shadow">
                                 ${p.category}
                             </span>
-                            ${badgeHTML}
                         </div>
-                        
-                        ${p.imageBack ? `
-                        <div class="flex items-center justify-center space-x-2 py-2 bg-gray-50 dark:bg-gray-800/40 border-b border-gray-100 dark:border-gray-800 text-xs font-bold">
-                            <button onclick="switchImageView(${p.id}, 'front')" class="px-2 py-0.5 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300">Front View</button>
-                            <button onclick="switchImageView(${p.id}, 'back')" class="px-2 py-0.5 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300">Back View</button>
-                        </div>` : ''}
-
                         <div class="p-5">
                             <h3 class="font-black text-gray-900 dark:text-white text-base mb-1 line-clamp-1">${p.name}</h3>
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">${p.desc || 'Premium apparel stock.'}</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">${p.desc}</p>
                             <div class="text-xl font-black text-blue-600 dark:text-blue-400 mb-3">
                                 ₦${p.price.toLocaleString()}
                             </div>
@@ -464,30 +297,13 @@
                         </div>
                     </div>
                     <div class="p-5 pt-0">
-                        ${p.status === 'sold' ? `
-                            <button disabled class="w-full bg-gray-300 dark:bg-gray-800 text-gray-500 font-bold py-3 px-4 rounded-2xl text-sm cursor-not-allowed">
-                                Out of Stock
-                            </button>
-                        ` : `
-                            <button onclick="orderOnWhatsApp(${p.id})" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 rounded-2xl text-sm flex items-center justify-center space-x-2 shadow-sm transition-colors">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                                <span>Order via WhatsApp</span>
-                            </button>
-                        `}
+                        <button onclick="orderOnWhatsApp(${p.id})" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 rounded-2xl text-sm flex items-center justify-center space-x-2 shadow-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Order via WhatsApp</span>
+                        </button>
                     </div>
                 </div>
-            `}).join('');
-        }
-
-        function switchImageView(productId, view) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-            const imgEl = document.getElementById(`img-view-${productId}`);
-            if (view === 'front' && product.imageFront) {
-                imgEl.src = product.imageFront;
-            } else if (view === 'back' && product.imageBack) {
-                imgEl.src = product.imageBack;
-            }
+            `).join('');
         }
 
         function selectSize(productId, size) {
@@ -499,24 +315,11 @@
             const selectedBtn = document.getElementById(`size-btn-${productId}-${size}`);
             if (selectedBtn) {
                 selectedBtn.className = "px-3 py-1.5 rounded-xl text-xs font-bold border bg-brand dark:bg-white dark:text-gray-900 text-white border-transparent transition-colors";
-                selectedBtn.dataset.selectedSize = size;
             }
-        }
-
-        function filterCategory(cat) {
-            currentFilter = cat;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.className = "cat-btn px-4.5 py-2.5 rounded-xl text-sm font-bold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 transition-all";
-            });
-            const activeBtn = document.getElementById(`btn-${cat}`);
-            if (activeBtn) {
-                activeBtn.className = "cat-btn px-4.5 py-2.5 rounded-xl text-sm font-extrabold bg-brand text-white dark:bg-white dark:text-gray-900 shadow transition-all";
-            }
-            renderProducts();
         }
 
         function orderOnWhatsApp(productId) {
-            const product = products.find(p => p.id === productId);
+            const product = sampleProducts.find(p => p.id === productId);
             if (!product) return;
 
             let selectedSize = product.sizes[0];
@@ -529,113 +332,11 @@
             }
 
             const deliveryLocation = document.getElementById('global-delivery-location').value;
-
-            const message = `Hello Teka Clothing, I want to order this item:\n\n*${product.name}*\nCategory: ${product.category}\nPrice: ₦${product.price.toLocaleString()}\nSize: ${selectedSize}\nDelivery Location: ${deliveryLocation}\nPhoto Link: ${product.imageFront}\n\nPlease confirm availability for waybill dispatch.`;
-            const encodedUrl = `https://wa.me/2347036924110?text=${encodeURIComponent(message)}`;
-            window.open(encodedUrl, '_blank');
+            const message = `Hello Teka Clothing, I want to order this item:\n\n*${product.name}*\nCategory: ${product.category}\nPrice: ₦${product.price.toLocaleString()}\nSize: ${selectedSize}\nDelivery Location: ${deliveryLocation}\n\nPlease confirm availability for waybill dispatch.`;
+            window.open(`https://wa.me/2347036924110?text=${encodeURIComponent(message)}`, '_blank');
         }
 
-        function openAdminModal() {
-            document.getElementById('admin-modal').classList.remove('hidden');
-            renderAdminInventoryList();
-        }
-
-        function closeAdminModal() {
-            document.getElementById('admin-modal').classList.add('hidden');
-        }
-
-        function renderAdminInventoryList() {
-            const listEl = document.getElementById('admin-inventory-list');
-            listEl.innerHTML = products.map(p => `
-                <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-2xl text-xs">
-                    <span class="font-bold truncate max-w-[120px]">${p.name}</span>
-                    <div class="flex items-center space-x-1">
-                        <select onchange="updateProductStatus(${p.id}, this.value)" class="bg-white dark:bg-gray-700 p-1.5 rounded-xl font-bold text-[11px]">
-                            <option value="available" ${p.status==='available'?'selected':''}>Available</option>
-                            <option value="pending" ${p.status==='pending'?'selected':''}>Pending</option>
-                            <option value="sold" ${p.status==='sold'?'selected':''}>Sold Out</option>
-                        </select>
-                        <button onclick="deleteProduct(${p.id})" class="text-red-500 p-1.5 hover:bg-red-50 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function updateProductStatus(id, newStatus) {
-            const product = products.find(p => p.id === id);
-            if (product) {
-                product.status = newStatus;
-                saveProducts();
-                renderProducts();
-            }
-        }
-
-        function deleteProduct(id) {
-            if (confirm("Are you sure you want to remove this item?")) {
-                products = products.filter(p => p.id !== id);
-                saveProducts();
-                renderProducts();
-                renderAdminInventoryList();
-            }
-        }
-
-        function handleProductSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('p-name').value;
-            const category = document.getElementById('p-category').value;
-            const price = parseFloat(document.getElementById('p-price').value);
-            const desc = document.getElementById('p-desc').value;
-
-            const sizeCheckboxes = document.querySelectorAll('input[name="sizes"]:checked');
-            const sizes = Array.from(sizeCheckboxes).map(cb => cb.value);
-
-            if (sizes.length === 0) {
-                alert('Please select at least one size.');
-                return;
-            }
-
-            const frontFile = document.getElementById('p-img-front').files[0];
-            const backFile = document.getElementById('p-img-back').files[0];
-
-            const readerFront = new FileReader();
-            readerFront.onload = function(uploadEvent) {
-                const imageFront = uploadEvent.target.result;
-
-                if (backFile) {
-                    const readerBack = new FileReader();
-                    readerBack.onload = function(backEvent) {
-                        saveNewProduct(name, category, price, sizes, imageFront, backEvent.target.result, desc);
-                    };
-                    readerBack.readAsDataURL(backFile);
-                } else {
-                    saveNewProduct(name, category, price, sizes, imageFront, imageFront, desc);
-                }
-            };
-            readerFront.readAsDataURL(frontFile);
-        }
-
-        function saveNewProduct(name, category, price, sizes, imageFront, imageBack, desc) {
-            const newProduct = {
-                id: Date.now(),
-                name,
-                category,
-                price,
-                sizes,
-                imageFront,
-                imageBack,
-                desc,
-                status: 'available'
-            };
-
-            products.unshift(newProduct);
-            saveProducts();
-            renderProducts();
-            renderAdminInventoryList();
-            closeAdminModal();
-            document.getElementById('product-form').reset();
-            alert('Product published successfully! It is now live on your store.');
-        }
-
+        // Live fluctuating active viewer counter
         setInterval(() => {
             const countEl = document.getElementById('active-viewers-count');
             if(countEl) {
