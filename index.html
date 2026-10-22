@@ -1,355 +1,110 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teka Clothing | Premium Apparel Store Onitsha</title>
+    <title>Teka Clothing | Onitsha</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            DEFAULT: '#111827',
-                            light: '#1f2937',
-                            accent: '#2563eb',
-                            gold: '#d97706'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased min-h-screen flex flex-col justify-between transition-colors duration-300">
+<body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Welcome Bulk Discount Popup Modal (Item #6) -->
-    <div id="welcome-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-gray-900 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl border border-gray-100 dark:border-gray-800 relative">
-            <div class="w-16 h-16 bg-blue-600/10 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                <i class="fa-solid fa-tag"></i>
-            </div>
-            <span class="bg-blue-600/10 text-blue-600 dark:text-blue-400 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Special Notice</span>
-            <h3 class="text-2xl font-black text-gray-900 dark:text-white mt-3 mb-2">Welcome to Teka Clothing</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                Explore Onitsha's finest polos, trousers, and shorts. <br><strong class="text-blue-600 dark:text-blue-400">Buy 5 items or more</strong> to qualify for special wholesale & bulk pricing directly via WhatsApp.
-            </p>
-            <button onclick="closeWelcomeModal()" class="w-full bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 dark:text-gray-900 text-white font-extrabold py-3.5 px-6 rounded-2xl text-sm shadow-lg transition-all">
-                Explore Store Catalog
-            </button>
-        </div>
-    </div>
-
-    <!-- Top Announcement Bar & Active Viewers (Item #4) -->
-    <div class="bg-brand dark:bg-gray-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide border-b border-gray-800 flex items-center justify-center space-x-4">
-        <span>Teka Clothing (EST. 2026) | Premium Trousers, Shorts & Polos | Fast Waybill Dispatch from Onitsha</span>
-        <div class="hidden md:flex items-center space-x-2 text-emerald-400 font-bold bg-emerald-950/50 px-2.5 py-0.5 rounded-full text-xs">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span id="active-viewers-count">48</span> Active Viewers Online
-        </div>
-    </div>
-
-    <!-- Navigation Header with Dark Mode Toggle (Item #7) -->
-    <header class="sticky top-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3 group select-none">
-                <div class="w-12 h-12 bg-brand dark:bg-white dark:text-gray-900 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-white text-gray-900 rounded-xl flex items-center justify-center font-black text-xl">
                     TC
                 </div>
                 <div>
-                    <span class="text-xl sm:text-2xl font-black tracking-tight text-gray-900 dark:text-white block leading-none">TEKA CLOTHING</span>
-                    <span class="text-xs font-bold text-brand-gold tracking-widest uppercase mt-1 block">EST. 2026 • Onitsha</span>
+                    <span class="text-xl font-black tracking-tight block">TEKA CLOTHING</span>
+                    <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block">EST. 2026 • Onitsha</span>
                 </div>
             </div>
-
-            <div class="flex items-center space-x-2 sm:space-x-3">
-                <button onclick="toggleDarkMode()" class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-200 transition-colors" title="Toggle Theme">
-                    <i id="theme-icon" class="fa-solid fa-moon"></i>
-                </button>
-                <a href="https://wa.me/2347036924110?text=Hello%20Teka%20Clothing,%20I%20am%20visiting%20your%20store%20and%20want%20to%20make%20an%20enquiry." target="_blank" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-colors shadow-sm">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Chat on WhatsApp</span>
-                </a>
-            </div>
+            <a href="https://wa.me/2347036924110?text=Hello%20Teka%20Clothing,%20I%20want%20to%20make%20an%20enquiry." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-sm font-bold flex items-center space-x-2 transition-colors">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>WhatsApp Chat</span>
+            </a>
         </div>
     </header>
 
-    <!-- Main Marketplace Content -->
-    <main class="flex-grow">
-        <section class="bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 py-12 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-200 dark:border-gray-800">
-            <div class="max-w-3xl mx-auto">
-                <span class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block mb-4 shadow-xs">Official Online Storefront</span>
-                <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 text-gray-900 dark:text-white">Upgrade Your Wardrobe with Premium Styles</h1>
-                <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base mb-4 max-w-xl mx-auto">Browse our collection of top-grade polos, tees, shorts, and trousers. Select your location and order directly via WhatsApp for fast waybill dispatch from Onitsha.</p>
-            </div>
-        </section>
+    <!-- Main Content -->
+    <main class="flex-grow py-10 px-4">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+            <span class="bg-gray-200 text-gray-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-3">Official Storefront</span>
+            <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-3">Premium Apparel & Waybill Dispatch</h1>
+            <p class="text-gray-600 text-sm sm:text-base">Top-quality polos, trousers, and shorts available for fast dispatch straight from our Onitsha hub.</p>
+        </div>
 
-        <!-- Live Store Statistics Grid (Item #4) -->
-        <section class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-6 px-4">
-            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800">
-                    <span class="block text-2xl font-black text-brand-accent">9,420+</span>
-                    <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Total Store Visitors</span>
-                </div>
-                <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800">
-                    <span class="block text-2xl font-black text-emerald-600">1,850+</span>
-                    <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Items Dispatched</span>
-                </div>
-                <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800">
-                    <span class="block text-2xl font-black text-amber-500">99.8%</span>
-                    <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Satisfaction Rate</span>
-                </div>
-                <div class="p-3 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-800">
-                    <span class="block text-2xl font-black text-purple-600">Nationwide</span>
-                    <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Waybill Coverage</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-                <div>
-                    <h2 class="text-2xl font-black tracking-tight text-gray-900 dark:text-white">Available Inventory</h2>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Select your delivery location and tap order to buy instantly</p>
-                </div>
-                
-                <div class="flex items-center space-x-2 bg-white dark:bg-gray-900 p-2 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xs w-full sm:w-auto">
-                    <span class="text-xs font-bold text-gray-400 uppercase pl-2">Ship To:</span>
-                    <select id="global-delivery-location" class="bg-transparent text-xs font-bold text-gray-800 dark:text-gray-200 focus:outline-none pr-4">
-                        <option value="Onitsha (Main Market / Awada / Nkpor)">Onitsha (Main Market / Awada / Nkpor)</option>
-                        <option value="Asaba (Summit / Inter-bau / Okpanam)">Asaba (Summit / Inter-bau / Okpanam)</option>
-                        <option value="Awka (Ifite / Aroma / UNIZIK)">Awka (Ifite / Aroma / UNIZIK)</option>
-                        <option value="Enugu (Abakpa / Ogbete / Independence Layout)">Enugu (Abakpa / Ogbete)</option>
-                        <option value="Owerri (Ikenegbu / Control / Douglas)">Owerri (Ikenegbu / Control)</option>
-                        <option value="Lagos / Abuja Waybill">Lagos / Abuja Waybill</option>
-                        <option value="Other States Nationwide">Other States Nationwide</option>
-                    </select>
-                </div>
-            </div>
-
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
-        </section>
-
-        <!-- Verified Delivery Proof Section (Item #5) -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200 dark:border-gray-800">
-            <div class="text-center max-w-xl mx-auto mb-10">
-                <span class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Verified Delivery Proof</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mt-2">Trusted by Buyers Across Nigeria</h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Real feedback and successful waybill dispatches straight from our Onitsha hub.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-xs">
-                    <div class="flex items-center space-x-1 text-amber-400 mb-3 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"My Chino trousers arrived in Asaba within 24 hours. The material quality is top-notch and exactly as described!"</p>
-                    <div class="flex items-center justify-between text-xs font-bold text-gray-500">
-                        <span>— Emeka K. (Asaba Buyer)</span>
-                        <span class="text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded">Waybill Verified</span>
-                    </div>
-                </div>
-
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-xs">
-                    <div class="flex items-center space-x-1 text-amber-400 mb-3 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"Ordered 5 pieces of the Italian cotton polos for my guys. The bulk discount was sweet and dispatch from Onitsha was fast."</p>
-                    <div class="flex items-center justify-between text-xs font-bold text-gray-500">
-                        <span>— Tunde O. (Lagos Waybill)</span>
-                        <span class="text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded">Waybill Verified</span>
-                    </div>
-                </div>
-
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-xs">
-                    <div class="flex items-center space-x-1 text-amber-400 mb-3 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-sm text-gray-700 dark:text-gray-300 italic mb-4">"Reliable seller! The cargo shorts fit perfectly. Will definitely order more stock next week."</p>
-                    <div class="flex items-center justify-between text-xs font-bold text-gray-500">
-                        <span>— Chinedu E. (Awka Buyer)</span>
-                        <span class="text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded">Waybill Verified</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div id="product-grid" class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand dark:bg-gray-900 text-white mt-16 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight block">TEKA CLOTHING</span>
-                    <p class="text-gray-400 text-xs mt-1">Onitsha, Anambra State, Nigeria • Nationwide Waybill Dispatch</p>
-                </div>
-                <div class="flex items-center space-x-4 text-xl">
-                    <a href="https://www.facebook.com/tekaclothing" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors text-white" title="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="https://wa.me/2347036924110" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-emerald-600 flex items-center justify-center transition-colors text-white" title="WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-                <span>&copy; 2026 Teka Clothing. All rights reserved.</span>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-400">Terms of Service</a>
-                </div>
-            </div>
-        </div>
+    <footer class="bg-gray-900 text-white py-8 px-4 text-center text-xs text-gray-400">
+        <p>&copy; 2026 Teka Clothing Co. Onitsha, Anambra State, Nigeria.</p>
     </footer>
 
-    <!-- Core JavaScript -->
+    <!-- Script -->
     <script>
-        const sampleProducts = [
+        const products = [
             {
                 id: 1,
                 name: "Classic Italian Cotton Polo",
                 category: "Polos",
                 price: 14500,
-                sizes: ["M", "L", "XL", "XXL"],
                 image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=800",
-                desc: "Premium breathable fabric, tailored fit, ideal for casual and corporate outings."
+                desc: "Premium breathable fabric, tailored fit."
             },
             {
                 id: 2,
                 name: "Executive Chino Trousers",
                 category: "Trousers",
                 price: 22000,
-                sizes: ["L", "XL", "XXL"],
                 image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800",
-                desc: "Smooth finish cotton blend trouser designed for durability and sharp styling."
+                desc: "Smooth finish cotton blend trouser."
             },
             {
                 id: 3,
                 name: "Urban Cargo Shorts",
                 category: "Shorts",
                 price: 12500,
-                sizes: ["M", "L", "XL"],
                 image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&q=80&w=800",
-                desc: "Multi-pocket rugged cargo shorts built for ultimate comfort and streetwear style."
+                desc: "Multi-pocket rugged cargo shorts."
             }
         ];
 
-        function closeWelcomeModal() {
-            document.getElementById('welcome-modal').classList.add('hidden');
-        }
-
-        function toggleDarkMode() {
-            const html = document.documentElement;
-            const icon = document.getElementById('theme-icon');
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                icon.className = "fa-solid fa-moon";
-                localStorage.setItem('teka_theme', 'light');
-            } else {
-                html.classList.add('dark');
-                icon.className = "fa-solid fa-sun";
-                localStorage.setItem('teka_theme', 'dark');
-            }
-        }
-
-        if (localStorage.getItem('teka_theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.getElementById('theme-icon').className = "fa-solid fa-sun";
-        }
-
         function renderProducts() {
             const grid = document.getElementById('product-grid');
-            grid.innerHTML = sampleProducts.map(p => `
-                <div class="bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-xs hover:shadow-xl transition-all flex flex-col justify-between group">
+            grid.innerHTML = products.map(p => `
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
                     <div>
-                        <div class="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
-                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
-                            <span class="absolute top-3 left-3 bg-brand dark:bg-white dark:text-gray-900 text-white text-xs font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider shadow">
-                                ${p.category}
-                            </span>
+                        <div class="aspect-square bg-gray-100 overflow-hidden">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
                         </div>
-                        <div class="p-5">
-                            <h3 class="font-black text-gray-900 dark:text-white text-base mb-1 line-clamp-1">${p.name}</h3>
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">${p.desc}</p>
-                            <div class="text-xl font-black text-blue-600 dark:text-blue-400 mb-3">
-                                ₦${p.price.toLocaleString()}
-                            </div>
-                            <div class="mb-4">
-                                <span class="block text-xs font-bold text-gray-400 uppercase mb-1.5">Select Size:</span>
-                                <div class="flex flex-wrap gap-1.5" id="sizes-${p.id}">
-                                    ${p.sizes.map((sz, idx) => `
-                                        <button onclick="selectSize(${p.id}, '${sz}')" id="size-btn-${p.id}-${sz}" class="px-3 py-1.5 rounded-xl text-xs font-bold border ${idx === 0 ? 'bg-brand dark:bg-white dark:text-gray-900 text-white border-transparent' : 'bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700'} transition-colors">
-                                            ${sz}
-                                        </button>
-                                    `).join('')}
-                                </div>
-                            </div>
+                        <div class="p-4">
+                            <span class="text-[10px] font-extrabold uppercase bg-gray-100 text-gray-700 px-2 py-0.5 rounded">${p.category}</span>
+                            <h3 class="font-bold text-gray-900 text-base mt-1">${p.name}</h3>
+                            <p class="text-xs text-gray-500 mt-1">${p.desc}</p>
+                            <div class="text-lg font-black text-blue-600 mt-3">₦${p.price.toLocaleString()}</div>
                         </div>
                     </div>
-                    <div class="p-5 pt-0">
-                        <button onclick="orderOnWhatsApp(${p.id})" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 px-4 rounded-2xl text-sm flex items-center justify-center space-x-2 shadow-sm transition-colors">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <div class="p-4 pt-0">
+                        <a href="https://wa.me/2347036924110?text=Hello%20Teka%20Clothing,%20I%20want%20to%20order%20${encodeURIComponent(p.name)}%20for%20₦${p.price.toLocaleString()}" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
                             <span>Order via WhatsApp</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             `).join('');
         }
 
-        function selectSize(productId, size) {
-            const container = document.getElementById(`sizes-${productId}`);
-            const buttons = container.querySelectorAll('button');
-            buttons.forEach(btn => {
-                btn.className = "px-3 py-1.5 rounded-xl text-xs font-bold border bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 transition-colors";
-            });
-            const selectedBtn = document.getElementById(`size-btn-${productId}-${size}`);
-            if (selectedBtn) {
-                selectedBtn.className = "px-3 py-1.5 rounded-xl text-xs font-bold border bg-brand dark:bg-white dark:text-gray-900 text-white border-transparent transition-colors";
-            }
-        }
-
-        function orderOnWhatsApp(productId) {
-            const product = sampleProducts.find(p => p.id === productId);
-            if (!product) return;
-
-            let selectedSize = product.sizes[0];
-            const container = document.getElementById(`sizes-${productId}`);
-            if (container) {
-                const activeBtn = container.querySelector('.bg-brand') || container.querySelector('.dark\\:bg-white');
-                if (activeBtn) {
-                    selectedSize = activeBtn.textContent.trim();
-                }
-            }
-
-            const deliveryLocation = document.getElementById('global-delivery-location').value;
-            const message = `Hello Teka Clothing, I want to order this item:\n\n*${product.name}*\nCategory: ${product.category}\nPrice: ₦${product.price.toLocaleString()}\nSize: ${selectedSize}\nDelivery Location: ${deliveryLocation}\n\nPlease confirm availability for waybill dispatch.`;
-            window.open(`https://wa.me/2347036924110?text=${encodeURIComponent(message)}`, '_blank');
-        }
-
-        // Live fluctuating active viewer counter
-        setInterval(() => {
-            const countEl = document.getElementById('active-viewers-count');
-            if(countEl) {
-                let current = parseInt(countEl.textContent);
-                let change = Math.floor(Math.random() * 7) - 3;
-                let updated = Math.max(32, Math.min(145, current + change));
-                countEl.textContent = updated;
-            }
-        }, 5000);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
-        });
+        document.addEventListener('DOMContentLoaded', renderProducts);
     </script>
 </body>
 </html>
