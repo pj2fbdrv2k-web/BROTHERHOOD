@@ -62,7 +62,8 @@
     <!-- Navigation Header -->
     <header class="sticky top-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-3 group">
+            <!-- Brand Logo with Secret 3-Tap Admin Trigger -->
+            <a href="#" onclick="handleLogoTap(event)" class="flex items-center space-x-3 group select-none">
                 <div class="w-12 h-12 bg-brand dark:bg-white dark:text-gray-900 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md group-hover:scale-105 transition-transform">
                     TC
                 </div>
@@ -352,11 +353,11 @@
             }
         ];
 
-        let products = JSON.parse(localStorage.getItem('teka_products_v6')) || defaultProducts;
+        let products = JSON.parse(localStorage.getItem('teka_products_v7')) || defaultProducts;
         let currentFilter = 'all';
 
         function saveProducts() {
-            localStorage.setItem('teka_products_v6', JSON.stringify(products));
+            localStorage.setItem('teka_products_v7', JSON.stringify(products));
         }
 
         function closeWelcomeModal() {
@@ -382,19 +383,27 @@
             document.getElementById('theme-icon').className = "fa-solid fa-sun";
         }
 
-        function checkAdminHash() {
-            if (window.location.hash === '#admin') {
+        // Secret 3-Tap Logo Trigger for Admin Panel
+        let logoTapCount = 0;
+        let logoTapTimer = null;
+        function handleLogoTap(e) {
+            e.preventDefault();
+            logoTapCount++;
+            if (logoTapCount === 1) {
+                logoTapTimer = setTimeout(() => {
+                    logoTapCount = 0;
+                }, 1000);
+            } else if (logoTapCount === 3) {
+                clearTimeout(logoTapTimer);
+                logoTapCount = 0;
                 const pin = prompt("Enter Admin Passcode:");
                 if (pin === "2026" || pin === "1234" || pin === "admin") {
                     openAdminModal();
-                } else {
+                } else if (pin !== null) {
                     alert("Incorrect passcode.");
-                    window.location.hash = '';
                 }
             }
         }
-
-        window.addEventListener('hashchange', checkAdminHash);
 
         function renderProducts() {
             const grid = document.getElementById('product-grid');
@@ -533,7 +542,6 @@
 
         function closeAdminModal() {
             document.getElementById('admin-modal').classList.add('hidden');
-            window.location.hash = '';
         }
 
         function renderAdminInventoryList() {
@@ -640,7 +648,6 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts();
-            checkAdminHash();
         });
     </script>
 </body>
